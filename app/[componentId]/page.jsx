@@ -82,7 +82,8 @@ export default function Detail({ params }) {
                 <p className="text-2xl font-semibold">Try</p>
 
                 <div className="flex flex-row justify-center gap-3 w-full">
-                    <div className="border rounded-lg w-[220px]"></div>
+                    <div className="border rounded-lg w-[220px]">
+                    </div>
 
                     <div className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] px-12 py-10">
                         {props &&
@@ -123,16 +124,6 @@ export default function Detail({ params }) {
 
                 <div className="border rounded-lg h-[100px] w-full bg-[#FBFBFB] flex items-center justify-center px-4">
                     <code className="text-sm text-[#333] whitespace-pre-wrap">{exampleCode}</code>
-                </div>
-            </div>
-
-            <div className="flex flex-col items-start gap-3 w-full">
-                <p className="text-2xl font-semibold">Example</p>
-
-                <div className="flex flex-col gap-2 border rounded-lg w-full p-2">
-                    <div className="border rounded-lg h-[220px] w-full bg-[#F2F2F2]"></div>
-
-                    <div className="border rounded-lg h-[220px] w-full bg-[#FBFBFB]"></div>
                 </div>
             </div>
         </div>
