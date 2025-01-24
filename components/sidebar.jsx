@@ -4,7 +4,7 @@ export default function Sidebar() {
   const components = ["Button", "Float Button", "Switch", "Divider", "Checkbox"];
 
   return (
-    <aside className="border p-6 w-60">
+    <aside className="border-r p-6 w-52 min-w-52">
       <ul className="space-y-4">
         {components.map((component, index) => (
           <li key={index}>
