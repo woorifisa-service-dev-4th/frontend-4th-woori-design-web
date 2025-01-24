@@ -1,0 +1,68 @@
+{
+  "button": {
+    "name": "Button",
+    "description": "The Button component is a versatile UI element that allows users to trigger actions or events within an application. It can be styled and customized to fit the design requirements of the application.",
+    "props": {
+      "type": {
+        "type": "string",
+        "description": "The type of the button",
+        "default": "button",
+        "choices": ["button", "submit", "reset"]
+      },
+      "onClick": {
+        "type": "function",
+        "description": "The function to be called when the button is clicked",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
+  },
+    "float-button": {
+        "name": "FloatButton",
+        "description": "A floating button component",
+        "props": {
+        "icon": {
+            "type": "string",
+            "description": "The icon of the button",
+            "default": "add",
+            "choices": ["add", "edit", "delete"]
+        },
+        "onClick": {
+            "type": "function",
+            "description": "The function to be called when the button is clicked",
+            "default": "() => {}",
+            "choices": ["() => {}"]
+        }
+        }
+    },
+  "switch": {
+    "name": "Switch",
+    "description": "The Switch component is a toggle control that allows users to switch between two states, typically representing \"on\" and \"off\". It is commonly used for enabling or disabling settings in an application.",
+    "props": {
+      "size": {
+        "type": "string",
+        "description": "The size of the switch",
+        "default": "md",
+        "choices": ["sm", "md", "lg"]
+      },
+      "checked": {
+        "type": "boolean",
+        "description": "The state of the switch",
+        "default": false,
+        "choices": ["true", "false"]
+      },
+      "disabled": {
+        "type": "boolean",
+        "description": "Whether the switch is disabled",
+        "default": false,
+        "choices": ["true", "false"]
+      },
+      "onChange": {
+        "type": "function",
+        "description": "The function to be called when the switch is toggled",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
+  }
+}
