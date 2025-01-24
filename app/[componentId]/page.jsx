@@ -1,8 +1,64 @@
-import data from "../../json/componentDescriptions.json";
+'use client';
 
-export default async function Detail({ params }) {
-    const {componentId} = await params;
-    const componentData = data[componentId];
+import data from "../../json/componentDescriptions.json";
+import { useEffect, useState } from "react";
+
+export default function Detail({ params }) {
+    const [componentData, setComponentData] = useState(null);
+    const [selectedChoices, setSelectedChoices] = useState({});
+    const [exampleCode, setExampleCode] = useState("");
+
+    const generateExampleCode = (componentName, choices, propsConfig = {}) => {
+        const propsString = Object.entries(choices)
+            .map(([key, value]) => {
+                const propType = propsConfig[key]?.type;
+
+                const formattedValue =
+                    propType === "boolean"
+                        ? `{${value}}`
+                        : propType === "function"
+                            ? `{${value}}`
+                            : `"${value}"`;
+
+                return `${key}=${formattedValue}`;
+            })
+            .join(" ");
+
+        setExampleCode(`<${componentName} ${propsString} />`);
+    };
+
+    useEffect(() => {
+        async function fetchParams() {
+            const { componentId } = await params;
+            const fetchedData = data[componentId];
+            if (!fetchedData) {
+                setComponentData(null);
+                return;
+            }
+
+            setComponentData(fetchedData);
+
+            const initialChoices = {};
+            Object.entries(fetchedData.props || {}).forEach(([propName, propDetails]) => {
+                initialChoices[propName] = propDetails.default;
+            });
+            setSelectedChoices(initialChoices);
+
+            generateExampleCode(fetchedData.name, initialChoices, fetchedData.props);
+        }
+
+        fetchParams();
+    }, [params]);
+
+    const handleChoiceSelect = (propName, choice) => {
+        const updatedChoices = {
+            ...selectedChoices,
+            [propName]: choice,
+        };
+        setSelectedChoices(updatedChoices);
+
+        generateExampleCode(componentData.name, updatedChoices, componentData.props);
+    };
 
     if (!componentData) {
         return (
@@ -13,7 +69,7 @@ export default async function Detail({ params }) {
         );
     }
 
-    const {name, description, props} = componentData;
+    const { name, description, props } = componentData || {};
 
     return (
         <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2">
@@ -26,37 +82,47 @@ export default async function Detail({ params }) {
                 <p className="text-2xl font-semibold">Try</p>
 
                 <div className="flex flex-row justify-center gap-3 w-full">
-                    <div className="border rounded-lg w-[220px]">
-                    </div>
+                    <div className="border rounded-lg w-[220px]"></div>
 
                     <div className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] px-12 py-10">
+                        {props &&
+                            Object.entries(props).map(([propName, propDetails], index) => (
+                                <div key={propName} className="flex flex-row items-start h-full">
+                                    <div
+                                        className={`flex flex-col gap-3 items-center ${
+                                            index === 0 ? "pl-0" : "pl-12"
+                                        } pr-12`}
+                                    >
+                                        <div className="flex flex-col items-center">
+                                            <p className="text-[#3D3D3D] text-[12px]">{propDetails.type}</p>
+                                            <p className="text-[#3D3D3D] font-medium">{propName}</p>
+                                        </div>
 
-                        {Object.entries(props).map(([propName, propDetails], index) => (
-                            <div key={propName} className="flex flex-row items-start h-full">
-                                <div className={`flex flex-col gap-3 items-center ${index === 0 ? 'pl-0' : 'pl-12'} pr-12`}>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-[#3D3D3D] text-[12px]">{propDetails.type}</p>
-                                        <p className="text-[#3D3D3D] font-medium">{propName}</p>
+                                        <div className="flex flex-col gap-1.5 items-center">
+                                            {propDetails.choices.map((choice, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={() => handleChoiceSelect(propName, choice)}
+                                                    className={`border rounded-[4px] py-0.5 px-2 ${
+                                                        selectedChoices[propName] === choice
+                                                            ? "border-blue-500 text-blue-500 bg-[#F4FAFF]"
+                                                            : "border-[#999999] text-[#777777]"
+                                                    }`}
+                                                >
+                                                    <p className="text-sm">{choice}</p>
+                                                </button>
+                                            ))}
+                                        </div>
                                     </div>
 
-                                    <div className="flex flex-col gap-1.5 items-center">
-                                        {propDetails.choices.map((choice, index) => (
-                                            <button key={index} className="border border-[#999999] rounded-[4px] py-0.5 px-2">
-                                                <p className="text-[#777777] text-sm">{choice}</p>
-                                            </button>
-                                        ))}
-                                    </div>
+                                    <div className="h-full border-l"></div>
                                 </div>
-
-                                <div className="h-full border-l"></div>
-                            </div>
-                        ))}
-
-
+                            ))}
                     </div>
                 </div>
 
-                <div className="border rounded-lg h-[100px] w-full bg-[#FBFBFB]">
+                <div className="border rounded-lg h-[100px] w-full bg-[#FBFBFB] flex items-center justify-center px-4">
+                    <code className="text-sm text-[#333] whitespace-pre-wrap">{exampleCode}</code>
                 </div>
             </div>
 
@@ -64,11 +130,9 @@ export default async function Detail({ params }) {
                 <p className="text-2xl font-semibold">Example</p>
 
                 <div className="flex flex-col gap-2 border rounded-lg w-full p-2">
-                    <div className="border rounded-lg h-[220px] w-full bg-[#F2F2F2]">
-                    </div>
+                    <div className="border rounded-lg h-[220px] w-full bg-[#F2F2F2]"></div>
 
-                    <div className="border rounded-lg h-[220px] w-full bg-[#FBFBFB]">
-                    </div>
+                    <div className="border rounded-lg h-[220px] w-full bg-[#FBFBFB]"></div>
                 </div>
             </div>
         </div>

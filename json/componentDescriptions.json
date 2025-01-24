@@ -48,13 +48,13 @@
       "checked": {
         "type": "boolean",
         "description": "The state of the switch",
-        "default": false,
+        "default": "false",
         "choices": ["true", "false"]
       },
       "disabled": {
         "type": "boolean",
         "description": "Whether the switch is disabled",
-        "default": false,
+        "default": "false",
         "choices": ["true", "false"]
       },
       "onChange": {
