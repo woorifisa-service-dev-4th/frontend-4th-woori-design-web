@@ -1,0 +1,98 @@
+{
+  "button": {
+    "name": "Button",
+    "description": "The Button component is a versatile UI element that allows users to trigger actions or events within an application. It can be styled and customized to fit the design requirements of the application.",
+    "props": {
+      "size": {
+        "type": "string",
+        "description": "The size of the button",
+        "default": "medium",
+        "choices": ["xlarge", "large", "medium", "small", "xsmall"]
+      },
+      "width": {
+        "type": "string",
+        "description": "The width of the button",
+        "default": "auto",
+        "choices": ["auto", "full"]
+      },
+      "children": {
+        "type": "element",
+        "description": "The content to be displayed inside the button",
+        "default": "Button",
+        "choices": ["Button"]
+      }
+    }
+  },
+  "floatbutton": {
+    "name": "Float Button",
+    "description": "A floating button component",
+    "props": {
+      "label": {
+        "type": "string",
+        "description": "The label text for the button",
+        "default": "info",
+        "choices": ["info", "add", "edit", "delete"]
+      },
+      "icon": {
+        "type": "element",
+        "description": "The icon to be displayed on the button",
+        "default": "InfoIcon",
+        "choices": ["InfoIcon", "AddIcon", "EditIcon", "DeleteIcon"]
+      },
+      "type": {
+        "type": "string",
+        "description": "The type of the button",
+        "default": "default",
+        "choices": ["primary", "default", "info", "warn", "error", "success"]
+      },
+      "shape": {
+        "type": "string",
+        "description": "The shape of the button",
+        "default": "circle",
+        "choices": ["circle", "rounded-square"]
+      },
+      "tooltip": {
+        "type": "string",
+        "description": "The tooltip text to be displayed on hover",
+        "default": "info",
+        "choices": ["info", "Add", "Edit", "Delete"]
+      },
+      "onClick": {
+        "type": "function",
+        "description": "The function to be called when the button is clicked",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
+  },
+  "switch": {
+    "name": "Switch",
+    "description": "The Switch component is a toggle control that allows users to switch between two states, typically representing \"on\" and \"off\". It is commonly used for enabling or disabling settings in an application.",
+    "props": {
+      "size": {
+        "type": "string",
+        "description": "The size of the switch",
+        "default": "md",
+        "choices": ["sm", "md", "lg"]
+      },
+      "checked": {
+        "type": "boolean",
+        "description": "The state of the switch",
+        "default": false,
+        "choices": [true, false]
+      },
+      "disabled": {
+        "type": "boolean",
+        "description": "Whether the switch is disabled",
+        "default": false,
+        "choices": [true, false]
+      },
+      "onChange": {
+        "type": "function",
+        "description": "The function to be called when the switch is toggled",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
+  }
+}
