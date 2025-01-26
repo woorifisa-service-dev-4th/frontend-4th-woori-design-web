@@ -4,7 +4,7 @@ import data from "../../json/componentDescriptions.json";
 import {useEffect, useRef, useState} from "react";
 import { Switch } from "@/libs/switch";
 import { Button } from "@/libs/button";
-import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton";
+import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton.jsx";
 
 export default function Detail({ params }) {
     const [componentData, setComponentData] = useState(null);
