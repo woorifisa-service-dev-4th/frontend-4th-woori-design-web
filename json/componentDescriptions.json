@@ -10,16 +10,16 @@
         "choices": ["xlarge", "large", "medium", "small", "xsmall"]
       },
       "width": {
-        "type": "string",
+        "type": "string(custom)",
         "description": "The width of the button",
         "default": "auto",
-        "choices": ["auto", "full"]
+        "choices": ["auto", "100%", "10rem"]
       },
       "children": {
-        "type": "element",
+        "type": "ReactNode(custom)",
         "description": "The content to be displayed inside the button",
-        "default": "Button",
-        "choices": ["Button"]
+        "default": "Click me",
+        "choices": ["Click me", "Submit", "Cancel"]
       }
     }
   },
@@ -90,6 +90,72 @@
       "onChange": {
         "type": "function",
         "description": "The function to be called when the switch is toggled",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
+  },
+  "divider": {
+    "name": "Divider",
+    "description": "The Divider component is a horizontal rule that separates content within a layout. It is commonly used to visually divide sections of a page or to create a visual hierarchy between elements.",
+    "props": {
+      "width": {
+        "type": "string(custom)",
+        "description": "The width of the divider",
+        "default": "100px",
+        "choices": ["100px", "100%", "50%"]
+      },
+      "thickness": {
+        "type": "number(custom)",
+        "description": "The thickness of the divider",
+        "default": 2,
+        "choices": [1, 2, 3, 6]
+      },
+      "lineColor": {
+        "type": "string",
+        "description": "The color of the divider line",
+        "default": "gray",
+        "choices": ["primary", "gray"]
+      }
+    }
+  },
+  "checkbox": {
+    "name": "Checkbox",
+    "description": "The Checkbox component is a form control that allows users to select or deselect an option. It is commonly used in forms to enable users to make multiple selections or to indicate agreement with terms and conditions.",
+    "props": {
+      "label": {
+        "type": "string(custom)",
+        "description": "The label text for the checkbox",
+        "default": "Check me",
+        "choices": ["Check me", "Agree", "Subscribe"]
+      },
+      "checked": {
+        "type": "boolean",
+        "description": "The state of the checkbox",
+        "default": false,
+        "choices": [true, false]
+      },
+      "disabled": {
+        "type": "boolean",
+        "description": "Whether the checkbox is disabled",
+        "default": false,
+        "choices": [true, false]
+      },
+      "type": {
+        "type": "string",
+        "description": "The type of the checkbox",
+        "default": "default",
+        "choices": ["default", "error", "warning"]
+      },
+      "helperText": {
+        "type": "string(custom)",
+        "description": "The helper text to be displayed below the checkbox",
+        "default": "Check this box to agree",
+        "choices": ["Check this box to agree", "Please press"]
+      },
+      "onChange": {
+        "type": "function",
+        "description": "The function to be called when the checkbox is toggled",
         "default": "() => {}",
         "choices": ["() => {}"]
       }

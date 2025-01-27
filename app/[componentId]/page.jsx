@@ -4,7 +4,9 @@ import data from "../../json/componentDescriptions.json";
 import {useEffect, useRef, useState} from "react";
 import { Switch } from "@/libs/switch";
 import { Button } from "@/libs/button";
-import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton";
+import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton.jsx";
+import {Divider} from "@/libs/divider";
+import {Checkbox} from "@/libs/checkbox";
 
 export default function Detail({ params }) {
     const [componentData, setComponentData] = useState(null);
@@ -81,13 +83,17 @@ export default function Detail({ params }) {
             return <Button {...selectedChoices} />;
         } else if (name === "Float Button") {
             return <WooriFloatButton {...selectedChoices} style={{position: "absolute", top: "-20px", left: "-15px"}} />;
+        } else if (name === "Divider") {
+            return <Divider {...selectedChoices} />;
+        } else if (name === "Checkbox") {
+            return <Checkbox {...selectedChoices} />;
         }
 
         return null;
     };
 
     return (
-        <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2 max-w-[1380px] min-w-[1080px]">
+        <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2 max-w-[1120px] min-w-[1080px]">
             <div className="flex flex-col items-start gap-2 w-full">
                 <h1 className="text-2xl font-semibold">{name}</h1>
                 <p className="text-[#3D3D3D]">{description}</p>
@@ -97,12 +103,12 @@ export default function Detail({ params }) {
                 <p className="text-2xl font-semibold">Try</p>
 
                 <div className="flex flex-row justify-center gap-3 w-full">
-                    <div className="flex flex-col items-center justify-center border rounded-lg w-[220px]">
+                    <div className="flex flex-col items-center justify-center border rounded-lg w-[220px] overflow-hidden">
                         {renderComponent()}
                     </div>
 
                     <div
-                        className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] px-12 py-10 overflow-x-auto">
+                        className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] max-w-[calc(100%-220px)] px-12 py-10 overflow-x-auto">
                         {props &&
                             Object.entries(props).map(([propName, propDetails], index) => (
                                 <div key={propName} className="flex flex-row items-start h-full">
