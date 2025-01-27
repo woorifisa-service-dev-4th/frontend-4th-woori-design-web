@@ -95,12 +95,12 @@ export default function Detail({ params }) {
     return (
         <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2 max-w-[1120px] min-w-[1080px]">
             <div className="flex flex-col items-start gap-2 w-full">
-                <h1 className="text-2xl font-semibold">{name}</h1>
+                <h1 className="text-2xl weight-600">{name}</h1>
                 <p className="text-[#3D3D3D]">{description}</p>
             </div>
 
             <div className="flex flex-col items-start gap-3 w-full">
-                <p className="text-2xl font-semibold">Try</p>
+                <p className="text-2xl weight-600">Try</p>
 
                 <div className="flex flex-row justify-center gap-3 w-full">
                     <div className="flex flex-col items-center justify-center border rounded-lg w-[220px] overflow-hidden">
@@ -119,7 +119,7 @@ export default function Detail({ params }) {
                                     >
                                         <div className="flex flex-col items-center">
                                             <p className="text-[#3D3D3D] text-[12px]">{propDetails.type}</p>
-                                            <p className="text-[#3D3D3D] font-medium">{propName}</p>
+                                            <p className="text-[#3D3D3D] weight-500">{propName}</p>
                                         </div>
 
                                         <div className="flex flex-col gap-1.5 items-center">

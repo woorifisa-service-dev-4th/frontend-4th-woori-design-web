@@ -20,7 +20,7 @@ export default function Sidebar() {
                                 <button
                                     className={`text-left block w-full transition-colors ${
                                         isActive
-                                            ? "text-blue-500 font-semibold"
+                                            ? "text-blue-500 weight-600"
                                             : "text-gray-700 hover:text-blue-500"
                                     }`}
                                 >
