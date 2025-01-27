@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header
-      className="min-w-[1330px]"
+      className="min-w-[1370px]"
       style={{
         width: "100%",
         height: "69px",

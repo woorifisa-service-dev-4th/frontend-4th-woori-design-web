@@ -93,7 +93,7 @@ export default function Detail({ params }) {
     };
 
     return (
-        <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2 max-w-[1380px] min-w-[1080px]">
+        <div className="flex flex-col items-center gap-20 pt-4 pb-20 px-2 max-w-[1120px] min-w-[1080px]">
             <div className="flex flex-col items-start gap-2 w-full">
                 <h1 className="text-2xl font-semibold">{name}</h1>
                 <p className="text-[#3D3D3D]">{description}</p>
@@ -108,7 +108,7 @@ export default function Detail({ params }) {
                     </div>
 
                     <div
-                        className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] px-12 py-10 overflow-x-auto">
+                        className="flex flex-row items-center border rounded-lg w-[calc(100%-220px)] max-w-[calc(100%-220px)] px-12 py-10 overflow-x-auto">
                         {props &&
                             Object.entries(props).map(([propName, propDetails], index) => (
                                 <div key={propName} className="flex flex-row items-start h-full">
