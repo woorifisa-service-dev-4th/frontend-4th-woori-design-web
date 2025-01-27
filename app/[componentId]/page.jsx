@@ -6,6 +6,7 @@ import { Switch } from "@/libs/switch";
 import { Button } from "@/libs/button";
 import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton.jsx";
 import {Divider} from "@/libs/divider";
+import {Checkbox} from "@/libs/checkbox";
 
 export default function Detail({ params }) {
     const [componentData, setComponentData] = useState(null);
@@ -84,6 +85,8 @@ export default function Detail({ params }) {
             return <WooriFloatButton {...selectedChoices} style={{position: "absolute", top: "-20px", left: "-15px"}} />;
         } else if (name === "Divider") {
             return <Divider {...selectedChoices} />;
+        } else if (name === "Checkbox") {
+            return <Checkbox {...selectedChoices} />;
         }
 
         return null;

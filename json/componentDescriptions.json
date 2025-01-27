@@ -118,5 +118,47 @@
         "choices": ["primary", "gray"]
       }
     }
+  },
+  "checkbox": {
+    "name": "Checkbox",
+    "description": "The Checkbox component is a form control that allows users to select or deselect an option. It is commonly used in forms to enable users to make multiple selections or to indicate agreement with terms and conditions.",
+    "props": {
+      "label": {
+        "type": "string(custom)",
+        "description": "The label text for the checkbox",
+        "default": "Check me",
+        "choices": ["Check me", "Agree", "Subscribe"]
+      },
+      "checked": {
+        "type": "boolean",
+        "description": "The state of the checkbox",
+        "default": false,
+        "choices": [true, false]
+      },
+      "disabled": {
+        "type": "boolean",
+        "description": "Whether the checkbox is disabled",
+        "default": false,
+        "choices": [true, false]
+      },
+      "type": {
+        "type": "string",
+        "description": "The type of the checkbox",
+        "default": "default",
+        "choices": ["default", "error", "warning"]
+      },
+      "helperText": {
+        "type": "string(custom)",
+        "description": "The helper text to be displayed below the checkbox",
+        "default": "Check this box to agree",
+        "choices": ["Check this box to agree", "Please press"]
+      },
+      "onChange": {
+        "type": "function",
+        "description": "The function to be called when the checkbox is toggled",
+        "default": "() => {}",
+        "choices": ["() => {}"]
+      }
+    }
   }
 }
