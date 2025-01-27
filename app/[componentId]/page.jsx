@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import { Switch } from "@/libs/switch";
 import { Button } from "@/libs/button";
 import WooriFloatButton from "@/libs/floatbutton/WooriFloatButton.jsx";
+import {Divider} from "@/libs/divider";
 
 export default function Detail({ params }) {
     const [componentData, setComponentData] = useState(null);
@@ -81,6 +82,8 @@ export default function Detail({ params }) {
             return <Button {...selectedChoices} />;
         } else if (name === "Float Button") {
             return <WooriFloatButton {...selectedChoices} style={{position: "absolute", top: "-20px", left: "-15px"}} />;
+        } else if (name === "Divider") {
+            return <Divider {...selectedChoices} />;
         }
 
         return null;
@@ -97,7 +100,7 @@ export default function Detail({ params }) {
                 <p className="text-2xl font-semibold">Try</p>
 
                 <div className="flex flex-row justify-center gap-3 w-full">
-                    <div className="flex flex-col items-center justify-center border rounded-lg w-[220px]">
+                    <div className="flex flex-col items-center justify-center border rounded-lg w-[220px] overflow-hidden">
                         {renderComponent()}
                     </div>
 
