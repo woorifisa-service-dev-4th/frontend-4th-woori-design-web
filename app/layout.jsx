@@ -5,7 +5,7 @@ import Sidebar from "../components/sidebar.jsx";
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-        <body className="flex min-h-screen flex-col">
+        <body className="flex min-h-screen flex-col w-full">
         <Header />
 
         <div className="flex flex-1">
