@@ -49,6 +49,6 @@ WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 �
 <br />
 
 ## 💁‍♂️ 프로젝트 팀원
-|Frontend|Frontend|Frontend|
-|:---:|:---:|:---:|
-|[권민지](https://github.com/mjgwon24)|[서채연](https://github.com/seocylucky)|[조윤주](https://github.com/iamyuunzo)|
+|Frontend|Frontend|Frontend|Frontend|Frontend|
+|:---:|:---:|:---:|:---:|:---:|
+|[권민지](https://github.com/mjgwon24)|[서채연](https://github.com/seocylucky)|[조윤주](https://github.com/iamyuunzo)|[조현식]|[황유환]|
