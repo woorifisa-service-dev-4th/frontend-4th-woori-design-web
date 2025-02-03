@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### WOORI DESIGN WEB 🖍️
 
-## Getting Started
+[<img src="https://img.shields.io/badge/프로젝트 기간-2024.12.30~2024.12.31-fab2ac?style=flat&logo=&logoColor=white" />]()
 
-First, run the development server:
+</div> 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📝 소개
+WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 있는 웹 사이트입니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br />
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
+## ⚙ 폴더 구조
+├── app                    # 애플리케이션 핵심 로직
+│   ├── [componentId]      # 컴포넌트별 폴더
+│   ├── favicon.ico        # 파비콘 파일
+│   ├── globals.css        # 전역 스타일 설정
+│   ├── layout.jsx         # 레이아웃 컴포넌트
+│   └── page.jsx           # 메인 페이지 컴포넌트
+├── components             # 재사용 가능한 UI 컴포넌트
+│   ├── header.jsx         # 헤더 컴포넌트
+│   └── sidebar.jsx        # 사이드바 컴포넌트
+├── icons                  # 프로젝트에서 사용하는 아이콘 모음
+├── json                   # 컴포넌트 정보 및 데이터 관리용 JSON 파일
+│   └── componentDescriptions.json  # 체크박스 컴포넌트 정보 JSON 파일
+├── libs                   # 유틸리티 함수 및 모듈 관리
+├── public                 # 정적 파일 (이미지, 폰트 등)
+├── .gitignore             # Git에서 무시할 파일 설정
+├── README.md              # 프로젝트 설명서
+├── eslint.config.mjs      # ESLint 설정 파일
+├── jsconfig.json          # JavaScript 설정 파일 (경로 설정 등)
+├── next.config.mjs        # Next.js 설정 파일
+├── package-lock.json      # 패키지 버전 잠금 파일
+├── package.json           # 프로젝트 의존성 및 스크립트 정의
+├── postcss.config.mjs     # PostCSS 설정 파일
+└── tailwind.config.mjs    # Tailwind CSS 설정 파일
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<br />
 
-## Learn More
+## 🛠️ 특징
+- Pretendard 폰트 적용 및 클래스 조정
+- 재사용 가능한 컴포넌트 개발 (헤더, 사이드바, 버튼, 체크박스 등)
+- JSON 기반 컴포넌트 정보 관리
+- Tailwind CSS를 활용한 스타일링
+- Next.js를 활용한 라우팅 및 렌더링
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💁‍♂️ 프로젝트 팀원
+|Frontend|Frontend|Frontend|
+|:---:|:---:|:---:|
+|[권민지](https://github.com/mjgwon24)|[서채연](https://github.com/seocylucky)|[조윤주](https://github.com/iamyuunzo)|
