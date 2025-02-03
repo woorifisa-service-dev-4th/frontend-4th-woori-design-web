@@ -10,6 +10,7 @@ WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 �
 <br />
 
 ## ⚙ 폴더 구조
+```
 ├── app                    # 애플리케이션 핵심 로직
 │   ├── [componentId]      # 컴포넌트별 폴더
 │   ├── favicon.ico        # 파비콘 파일
@@ -33,6 +34,7 @@ WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 �
 ├── package.json           # 프로젝트 의존성 및 스크립트 정의
 ├── postcss.config.mjs     # PostCSS 설정 파일
 └── tailwind.config.mjs    # Tailwind CSS 설정 파일
+```
 
 <br />
 
