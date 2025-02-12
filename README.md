@@ -1,14 +1,13 @@
-### WOORI DESIGN WEB 🖍️
+# 🏗️ Woori Design Web - Frontend 
 
-[<img src="https://img.shields.io/badge/프로젝트 기간-2024.12.30~2024.12.31-fab2ac?style=flat&logo=&logoColor=white" />]()
+<br />
 
+## 📝 소개
+WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 있는 웹 사이트입니다.
 
 https://frontend-4th-woori-design-web.vercel.app/button
 
 </div> 
-
-## 📝 소개
-WOORI DESIGN 시스템의 각 컴포넌트를 미리보거나 사용해볼 수 있는 웹 사이트입니다.
 
 <br />
 
